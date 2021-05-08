@@ -12,14 +12,13 @@
       <p>{{ fullName() }}</p>
       <p><a :href="url" target="_blank">Youtube</a></p>
       <p v-html="rawUrl"></p>
-      <p>{{ age }}</p>
+      <p>{{ typeof age }}</p>
       <hr />
       <label>First Name</label>
-      <input type="text" v-model="firstName" />
+      <input type="text" v-model.lazy.trim="firstName" />
 
       <label>Middle Name</label>
       <input type="text" @keyup.enter="updateMiddleName" />
-
 
       <label>LastName</label>
       <input
@@ -27,6 +26,8 @@
         :value="lastName"
         @input.prevent='updateLastName("Last Name event triggered!", $event) '
       />
+      <label>Age</label>
+      <input type="number" v-model.number='age'/>
 
       <button @click="increment">Increment</button>
       <button @click="age--">Decrement</button>

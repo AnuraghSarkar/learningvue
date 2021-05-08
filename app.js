@@ -3,6 +3,7 @@ const vm = Vue.createApp({
     return {
       firstName: "das",
       lastName: "dsad",
+      url: 'https://youtube.com'
     };
   },
   methods: {

@@ -1,2 +1,13 @@
-import { writeFileSync } from "node:fs";
-writeFileSync("hello.txt", "Hello From node");
+const vm = Vue.createApp({
+  data: () => {
+    return {
+      firstName: "das",
+      lastName: "dsad",
+    };
+  },
+  methods: {
+    fullName() {
+      return `${this.firstName} ${this.lastName.toUpperCase()}`;
+    },
+  },
+}).mount("#app");
